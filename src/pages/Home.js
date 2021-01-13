@@ -1,5 +1,6 @@
 import { useEffect, useState, } from 'react';
 import { BadgeMain } from '../components/BadgeMain';
+import { BadgeSectionArticles } from '../components/BadgeSectionArticles';
 
 function Home() {
 
@@ -18,13 +19,19 @@ function Home() {
   }, []);
 
   console.log(result)
+  console.log(response)
   return(
-    <BadgeMain
-      titlePrincipal={result.title_ppal}
-      testTitle={result.test_title}
-      testDescription={result.test_description}
-      image={result.what_images_test}
-    />
+    <>
+      <BadgeMain
+        titlePrincipal={result.title_ppal}
+        testTitle={result.test_title}
+        testDescription={result.test_description}
+        image={result.what_images_test}
+      />
+      <BadgeSectionArticles
+        articles={result.articles_pymes_test}
+      />
+    </>
   );
 }
 
