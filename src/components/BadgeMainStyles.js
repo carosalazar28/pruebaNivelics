@@ -5,6 +5,8 @@ export const NameCompany = styled.h2`
   font-size: 48px;
   color: #00b6d7;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+  position: absolute;
+  right: 41%;
 `;
 
 export const MainContent = styled.main`
@@ -27,15 +29,15 @@ export const ContentDescription = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-}
 `;
 
 export const ImagePrincipal = styled.div`
   grid-area: image;
-  height: 530px;
+  height: 470px;
 `;
 
 export const Image = styled.img`
   width: -webkit-fill-available;
   object-fit: cover;
+  height: fit-content;
 `;
