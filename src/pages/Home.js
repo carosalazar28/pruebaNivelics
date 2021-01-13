@@ -1,6 +1,7 @@
 import { useEffect, useState, } from 'react';
 import { BadgeMain } from '../components/BadgeMain';
 import { BadgeSectionArticles } from '../components/BadgeSectionArticles';
+import { BadgeSectionService } from ' ../components/BadgeSectionService';
 
 function Home() {
 
@@ -30,6 +31,9 @@ function Home() {
       />
       <BadgeSectionArticles
         articles={result.articles_pymes_test}
+      />
+      <BadgeSectionService
+        service={result.categories}
       />
     </>
   );
