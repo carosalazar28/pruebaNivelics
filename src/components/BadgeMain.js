@@ -6,8 +6,7 @@ import {
   ImagePrincipal,
 } from './BadgeMainStyles';
 
-export function BadgeMain({ titlePrincipal, testTitle, testDescription, image }) {
-  
+export function BadgeMain({ titlePrincipal, testTitle, testDescription, image }) { 
   return (
     <>
       <MainContent>
