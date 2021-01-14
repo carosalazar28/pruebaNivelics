@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { TestimonyProvider } from './store/TestimonyContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TestimonyProvider>
+      <App />
+    </TestimonyProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
