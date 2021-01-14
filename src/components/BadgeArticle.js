@@ -9,6 +9,7 @@ const ContainerArticle = styled.article`
   margin-bottom: 17px;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-right: 30px;
 `;
 
 const Image = styled.img`
@@ -20,11 +21,13 @@ const Image = styled.img`
 const NameArticle = styled.a`
   grid-area: name;
   margin: auto;
+  font-size: 25px;
 `;
 
 const DescriptionArticle = styled.p`
   grid-area: description;
   margin: auto 15px;
+  font-size: 20px;
 `;
 
 export function BadgeArticle({ image, description, url_article, name }) {
