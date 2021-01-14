@@ -1,12 +1,18 @@
-export function BadgeService({ image, description, url_article, name }) {
+export function BadgeService({name, summary, description, image, icon, price}) {
   return (
     <article>
+      <h6>{name}</h6>
+      <p>{summary}</p>
+      <p>{description}</p>
       <img
         src={image}
-        alt="Imagen del articulo"
+        alt="Imagen del servicio"
       />
-      <DescriptionArticle>{description}</DescriptionArticle>
-      <NameArticle href={url_article}>{name}</NameArticle> 
+      <img
+        src={icon}
+        alt="Icono del servicio"
+      />
+      <p>{price}</p>
     </article>
   )
 };

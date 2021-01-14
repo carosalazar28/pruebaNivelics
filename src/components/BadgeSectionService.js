@@ -12,13 +12,32 @@ const Section = styled.section`
   padding: 0 30px;
 `;
 
-export function BadgeSectionService({categories}) {
+export function BadgeSectionService({name, icon, services}) {
+console.log(services)
   return (
     <>
-      <NameSection>Artículos</NameSection>
+      <NameSection>Servicios</NameSection>
       <hr/>
       <Section>
-        
+        <div>
+          <h5>{name}</h5>
+          <img
+            src={icon}
+            alt="Icono logo de la categoria"
+          />
+        </div>
+        {!!services && services.length > 0 && services.map(({id, name, summary, short_description, image, icon, price}) => {
+          return(
+            <BadgeService
+              key={id}
+              name={name}
+              summary={summary}
+              description={short_description}
+              image={image}
+              icon={icon}
+              price={price}
+            />
+        )})}
       </Section>
     </>
   )
