@@ -1,7 +1,8 @@
 import { useEffect, useState, } from 'react';
 import { BadgeMain } from '../components/BadgeMain';
 import { BadgeSectionArticles } from '../components/BadgeSectionArticles';
-import { BadgeSectionService } from ' ../components/BadgeSectionService';
+import { BadgeSectionService } from '../components/BadgeSectionService';
+import { BadgeSectionTestimony } from '../components/BadgeSectionTestimony';
 
 function Home() {
 
@@ -13,28 +14,40 @@ function Home() {
     setResponse(json)
   }
 
-  const { result } = response
-
+  
   useEffect(() => {
     getData()
   }, []);
-
-  console.log(result)
-  console.log(response)
+  
+  const result = response ? response.result : null
   return(
     <>
-      <BadgeMain
-        titlePrincipal={result.title_ppal}
-        testTitle={result.test_title}
-        testDescription={result.test_description}
-        image={result.what_images_test}
-      />
-      <BadgeSectionArticles
-        articles={result.articles_pymes_test}
-      />
-      <BadgeSectionService
-        service={result.categories}
-      />
+    {result && (
+      <>
+        <BadgeMain
+          titlePrincipal={result.title_ppal}
+          testTitle={result.test_title}
+          testDescription={result.test_description}
+          image={result.what_images_test}
+        />
+        <BadgeSectionArticles
+          articles={result.articles_pymes_test}
+        />
+        {!!result.categories && result.categories.length > 0 && result.categories.map(({name, icon, services}, index) => {
+          return (
+            <BadgeSectionService
+              key={index}
+              name={name}
+              icon={icon}
+              services={services}
+            />
+          )})}
+        <BadgeSectionTestimony
+          title={result.title_testimony}
+          testimonies={result.testimony}
+        />
+      </>
+    )}
     </>
   );
 }
